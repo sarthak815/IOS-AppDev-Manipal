@@ -39,9 +39,9 @@ let num:Int = 12%5
 //:  Create two integer constants, `even` and `odd` and set them to any even integer and any odd integer, respectively. For each, print the remainder of dividing the value by 2. Looking at the results, how do you think you could use the remainder operator to determine if an integer is even or odd?
 let even:Int = 12
 let odd:Int = 7
-print(even/2)
-print(odd/2)
-
+print(even%2)
+print(odd%2)
+print("The remainder operator can be used to check if the remainder obtained on dividing is 0 or 1. If 0 then the number is even otherwise odd.")
 /*:
 page 1 of 8  |  [Next: App Exercise - Fitness Calculations](@next)
  */
