@@ -9,6 +9,12 @@ let storedUserName = "TheFittest11"
 let storedPassword = "a8H1LuK91"
 let enteredUserName = "thefittest11"
 let enteredPassword: String = "a8H1Luk9"
+if((enteredUserName.lowercased() == storedUserName.lowercased())&&(enteredPassword == storedPassword)){
+    print(" logged in")
+}
+else{
+    print("please check your username or password again")
+}
 
 
 /*:
@@ -19,6 +25,9 @@ let enteredPassword: String = "a8H1Luk9"
 import Foundation
 let userName = "StepChallenger"
 let searchName = "step"
+if (userName.lowercased().contains(searchName.lowercased())){
+    print("found it")
+}
 
 
 /*:
