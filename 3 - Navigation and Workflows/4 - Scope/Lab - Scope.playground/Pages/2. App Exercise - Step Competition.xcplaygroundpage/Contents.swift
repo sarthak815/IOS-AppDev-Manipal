@@ -35,12 +35,15 @@ func getWinner(competitors: [User]) -> User? {
     return topCompetitor
 }
 
-
+if let winner = getWinner(competitors: competitors) {
+    print(winner.name)
+}
 //:  Write a memberwise initializer inside the `User` struct above that uses variable shadowing for naming the parameters of the initializer.
 
 
 //:  Now write a failable initializer inside the `User` struct above that takes parameters `name` and `stepsToday` as an optional `String` and `Int`, respectively. The initializer should return `nil` if either of the parameters are `nil`. Use variable shadowing when unwrapping the two parameters.
-
+let newUser = User(name: nil, stepsToday: nil)
+print(newUser)
 
 /*:
  _Copyright © 2021 Apple Inc._

@@ -3,8 +3,19 @@
 
  If an app asks for a user's age, it may be because the app requires a user to be over a certain age to use some of the services it provides. Write a function called `checkAge` that takes one parameter of type `String`. The function should try to convert this parameter into an `Int` value and then check if the user is over 18 years old. If he/she is old enough, print "Welcome!", otherwise print "Sorry, but you aren't old enough to use our app." If the `String` parameter cannot be converted into an `Int` value, print "Sorry, something went wrong. Can you please re-enter your age?" Call the function and pass in `userInputAge` below as the single parameter. Then call the function and pass in a string that can be converted to an integer.
  */
-let userInputAge: String = "34e"
+func checkAge(ageS: String) -> String {
+    let age:Int? = Int(ageS)
+    guard let age = age else {
+        return "Sorry, something went wrong. Can you please re-enter your age?"
+    }
 
+    if age > 18 {
+        return "Welcome!"
+    } else {
+        return "Sorry, but you aren't old enough to use our app."
+    }
+}
+print(checkAge(ageS:"12"))
 
 //:  Go back and update your function to return the age as an integer. Will your function always return a value? Make sure your return type accurately reflects this. Call the function and print the return value.
 
@@ -13,7 +24,23 @@ let userInputAge: String = "34e"
 var prices = ["Chips": 2.99, "Donuts": 1.89, "Juice": 3.99, "Apple": 0.50, "Banana": 0.25, "Broccoli": 0.99]
 var stock = ["Chips": 4, "Donuts": 0, "Juice": 12, "Apple": 6, "Banana": 6, "Broccoli": 3]
 
+func purchase(item:String)->Double?{
+    if let price = prices[item] {
+        if let quantity = stock[item] { // check for quantitiy of item
+            if quantity == 0 { // item present but 0 quantatiy
+                return nil
+            }
+        } else {
+            return nil // item not present in stock
+        }
+        stock[item] = stock[item]! - 1 // one itme sold
+        return price // return the price of the item
 
+    } else {
+        return nil // item not present in prices
+    }
+}
+print(purchase(item:"Juice"))
 /*:
 [Previous](@previous)  |  page 3 of 6  |  [Next: App Exercise - Food Functions](@next)
  */
